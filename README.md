@@ -31,7 +31,7 @@ Go through the puzzles sequentially
 14. [KeccakFirstCalldata](./src/KeccakFirstCalldata.sol) (_solved_)
 15. [KeccakSecondCalldata](./src/KeccakSecondCalldata.sol) (_solved_)
 16. [LengthOfDynamicArray](./src/LengthOfDynamicArray.sol) (_solved_)
-17. [MaxOfArray](./src/MaxOfArray.sol) 
+17. [MaxOfArray](./src/MaxOfArray.sol) (_solved_)
 18. [ReadFromStorage](./src/ReadFromStorage.sol) 
 19. [WriteToStorage](./src/WriteToStorage.sol) 
 20. [ReadFromFixedArray](./src/ReadFromFixedArray.sol) 
