@@ -7,6 +7,9 @@ contract CalldataLength {
             // your code here
             // return the length of the calldata
             // hint: calldatasize opcode
+            let size := calldatasize()
+            mstore(0x00, size)
+            return(0x00, 0x20)
         }
     }
 }
