@@ -8,6 +8,22 @@ contract WriteDynamicArrayToStorage {
         assembly {
             // your code here
             // write the dynamic calldata array `x` to storage variable `writeHere`
+
+            // calldata structure -> selecltor(4bytes), offset(20bytes), length, array_elements
+            // For calldata parameters, Solidity already exposes: x.offset, x.length
+            let slot := writeHere.slot
+            mstore(0x00, slot)
+            let hash := keccak256(0x00, 0x20)
+            sstore(slot, x.length)
+            for {
+                let i := 0
+            } lt(i, x.length) {
+                i := add(i, 1)
+            } {
+                let s := add(i, hash)
+                let val := calldataload(add(x.offset, mul(i, 0x20)))
+                sstore(s, val)
+            }
         }
     }
 }
