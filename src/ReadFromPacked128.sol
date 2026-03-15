@@ -15,6 +15,11 @@ contract ReadFromPacked128 {
             // your code here
             // unpack and read data from the storage variable `readMe` of type uint128
             // then return it
+
+            let x := sload(readMe.slot)
+            let r := shr(128, x)
+            mstore(0x00, r)
+            return(0x00, 0x20)
         }
     }
 }
