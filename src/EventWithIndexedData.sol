@@ -15,6 +15,11 @@ contract EventWithIndexedData {
             //  topic 1: The `emitter` address
             //  topic 2: The `id` bytes32 value
             // include the `number` field as the data payload
+
+            mstore(0x00, num)
+            mstore(0x20, "MyEvent(address,bytes32,uint256)")
+            let hash := keccak256(0x20, 0x20)
+            log3(0x00, 0x20, hash, emitter, id)
         }
     }
 }
