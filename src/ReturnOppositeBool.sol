@@ -6,6 +6,10 @@ contract ReturnOppositeBool {
         assembly {
             // your code here
             // return the opposite of `_bool`
+
+            let s := iszero(_bool)
+            mstore(0x00, s)
+            return(0x00, 0x20)
         }
     }
 }
